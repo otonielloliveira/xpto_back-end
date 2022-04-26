@@ -23,3 +23,8 @@ use App\Http\Controllers\Auth\IndexController as AuthController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/me', [AuthController::class, 'me']);
+});

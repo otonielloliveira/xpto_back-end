@@ -10,6 +10,7 @@ use App\Http\Requests\Auth\{
     RegisterRequest,
     LoginRequest
 };
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{
     Auth,
     Hash
@@ -51,5 +52,10 @@ class IndexController extends Controller
             'access_token' => $token,
             'token_type' => 'Bearer',
         ]);
+    }
+
+    public function me(Request $request)
+    {
+        return $request->user();
     }
 }
