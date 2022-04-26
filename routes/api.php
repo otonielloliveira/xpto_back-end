@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 use App\Http\Controllers\Auth\IndexController as AuthController;
-
+use App\Http\Controllers\Url\IndexController as UrlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +28,5 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::resource('url', UrlController::class);
 });
