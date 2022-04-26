@@ -58,4 +58,14 @@ class IndexController extends Controller
     {
         return $request->user();
     }
+
+    public function logout(Request $request)
+    {
+
+        $request->user()->tokens()->delete();
+
+        return response()->json([
+            'message' => 'Logout realizado com sucesso!!'
+        ]);
+    }
 }
