@@ -22,4 +22,4 @@ use App\Http\Controllers\Auth\IndexController as AuthController;
 */
 
 Route::post('/register', [AuthController::class, 'register']);
-
+Route::post('/login', [AuthController::class, 'login']);
