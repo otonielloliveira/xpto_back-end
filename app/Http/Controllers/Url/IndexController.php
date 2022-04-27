@@ -57,7 +57,7 @@ class IndexController extends Controller
 
         return response()->json([
             'message' => 'Url Cadastrada com sucesso!'
-        ]);
+        ], 201);
     }
 
     /**
